@@ -1,10 +1,10 @@
-<!-- Previous HEAD and STYLE sections remain exactly the same until we add these new styles -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strategy Recommendation Quiz</title>
     <style>
-        /* Previous styles remain the same */
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
@@ -67,18 +67,6 @@
             color: #666;
             font-style: italic;
         }
-        .strategy-score.top-three {
-            border-left-color: #2196F3;
-            background: #f5f9ff;
-            font-weight: bold;
-        }
-        .score-value {
-            float: right;
-        }
-        .na-label {
-            color: #999;
-            margin-left: 5px;
-        }
         .progress-bar {
             width: 100%;
             height: 10px;
@@ -103,68 +91,240 @@
         }
     </style>
 </head>
-<!-- Previous HTML structure remains exactly the same until the showResults function -->
+<body>
+    <div class="container">
+        <div id="quiz">
+            <h1>Strategy Recommendation Quiz</h1>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div id="questions"></div>
+            <div id="error-message" class="error-message"></div>
+            <button onclick="previousQuestion()" id="prevBtn" style="display: none;">Previous</button>
+            <button onclick="nextQuestion()" id="nextBtn">Next</button>
+            <button onclick="showResults()" id="submitBtn" style="display: none;">Show Results</button>
+        </div>
+        <div id="results">
+            <h2>Recommended Strategies</h2>
+            <div id="strategies"></div>
+            <button onclick="restartQuiz()">Start Over</button>
+        </div>
+    </div>
 
-<script>
-    // Previous code remains exactly the same until the showResults function
-    // Only showing the modified showResults function here, rest remains unchanged
+    <script>
+        const strategies = [
+            "O&H Patents",
+            "O&H Trademarks",
+            "Court (ie See a lawyer, non injunction)",
+            "ADR (WIPO)",
+            "ADR (Domestic)",
+            "DIY Letters & Communication",
+            "External Report (eg Amazon)",
+            "Report to Gov bodies",
+            "ASBFEO type services",
+            "ABF Notice of Objection",
+            "Consult with IP Pros (eg Attorneys)",
+            "AFP Referral",
+            "Take No Action (but get advice)",
+            "Injunction",
+            "Patent re-examination",
+            "Additional Option",
+            "Additional Option",
+            "Additional Option",
+            "Additional Option",
+            "Additional Option"
+        ];
 
-    function showResults() {
-        if (!validateCurrentQuestion()) return;
+        const quizData = [
+            {
+                question: "What type of intellectual property is involved? (Select all that apply)",
+                options: [
+                    "Patents",
+                    "Trademarks",
+                    "Trade Secrets",
+                    "Copyright",
+                    "Design Rights"
+                ],
+                multiSelect: true,
+                scoring: [
+                    [5,0,3,0,2,1,0,1,1,0,4,0,2,3,5,0,0,0,0,0],
+                    [0,5,3,2,2,2,3,1,1,4,4,0,2,3,0,0,0,0,0,0],
+                    [0,0,4,1,2,2,0,1,1,0,3,2,3,4,0,0,0,0,0,0],
+                    [0,0,3,2,2,2,3,1,1,0,3,1,2,3,0,0,0,0,0,0],
+                    [0,0,3,1,2,2,2,1,1,3,4,0,2,3,0,0,0,0,0,0]
+                ],
+                naMarkers: [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
+                    [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],
+                    [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],
+                    [1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0]
+                ],
+                required: true
+            },
+            {
+                question: "How serious is the potential impact to your business?",
+                options: [
+                    "Very Serious",
+                    "Moderate",
+                    "Minor"
+                ],
+                multiSelect: false,
+                scoring: [
+                    [4,4,5,4,4,2,3,4,3,4,5,4,2,5,4,0,0,0,0,0],
+                    [2,2,3,3,3,4,3,3,4,3,4,2,3,3,2,0,0,0,0,0],
+                    [1,1,1,1,1,3,2,2,3,1,2,0,4,1,1,0,0,0,0,0]
+                ],
+                naMarkers: [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1]
+                ],
+                required: true
+            }
+            // Add your remaining questions here...
+        ];
 
-        scores = new Array(20).fill(0);
-        applicabilityArray = new Array(20).fill(1);
+        let currentQuestion = 0;
+        let scores = new Array(20).fill(0);
+        let applicabilityArray = new Array(20).fill(1);
 
-        for (let i = 0; i < quizData.length; i++) {
-            const questionResult = calculateQuestionScores(i);
-            for (let j = 0; j < 20; j++) {
-                scores[j] += questionResult.scores[j];
-                if (questionResult.na[j] === 0) applicabilityArray[j] = 0;
+        function initializeQuiz() {
+            const questionsContainer = document.getElementById('questions');
+            questionsContainer.innerHTML = quizData.map((q, index) => `
+                <div class="question" id="question-${index}">
+                    <h3>Question ${index + 1} of ${quizData.length}</h3>
+                    <p>${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, optIndex) => `
+                            <label>
+                                <input type="${q.multiSelect ? 'checkbox' : 'radio'}" 
+                                       name="q${index}" 
+                                       value="${optIndex}">
+                                ${option}
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+            showQuestion(0);
+        }
+
+        function showQuestion(index) {
+            document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+            document.getElementById(`question-${index}`).classList.add('active');
+            
+            const progress = ((index + 1) / quizData.length) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+            
+            document.getElementById('prevBtn').style.display = index > 0 ? 'inline' : 'none';
+            document.getElementById('nextBtn').style.display = index < quizData.length - 1 ? 'inline' : 'none';
+            document.getElementById('submitBtn').style.display = index === quizData.length - 1 ? 'inline' : 'none';
+            
+            // Clear any error messages
+            document.getElementById('error-message').style.display = 'none';
+        }
+
+        function validateCurrentQuestion() {
+            const currentQ = quizData[currentQuestion];
+            if (!currentQ.required) return true;
+
+            const selected = document.querySelectorAll(`input[name="q${currentQuestion}"]:checked`);
+            if (selected.length === 0) {
+                document.getElementById('error-message').textContent = 'Please select at least one option';
+                document.getElementById('error-message').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
             }
         }
 
-        let strategyScores = strategies.map((strategy, index) => ({
-            strategy: strategy,
-            score: scores[index],
-            isApplicable: applicabilityArray[index]
-        }));
+        function nextQuestion() {
+            if (validateCurrentQuestion()) {
+                if (currentQuestion < quizData.length - 1) {
+                    currentQuestion++;
+                    showQuestion(currentQuestion);
+                }
+            }
+        }
 
-        // First sort by applicability and score
-        strategyScores.sort((a, b) => {
-            if (!a.isApplicable && b.isApplicable) return 1;
-            if (a.isApplicable && !b.isApplicable) return -1;
-            return b.score - a.score;
-        });
+        function calculateQuestionScores(questionIndex) {
+            const question = quizData[questionIndex];
+            let questionScores = new Array(20).fill(0);
+            let questionNA = new Array(20).fill(1);
+            
+            const selected = document.querySelectorAll(`input[name="q${questionIndex}"]:checked`);
+            
+            selected.forEach(selection => {
+                const answerIndex = parseInt(selection.value);
+                const answerScoring = question.scoring[answerIndex];
+                const answerNA = question.naMarkers[answerIndex];
+                
+                for (let i = 0; i < 20; i++) {
+                    questionScores[i] += answerScoring[i];
+                    if (answerNA[i] === 0) questionNA[i] = 0;
+                }
+            });
+            
+            return { scores: questionScores, na: questionNA };
+        }
 
-        // Find the top three applicable strategies
-        const topThree = new Set(
-            strategyScores
-                .filter(item => item.isApplicable)
-                .slice(0, 3)
-                .map(item => item.strategy)
-        );
+        function showResults() {
+            if (!validateCurrentQuestion()) return;
 
-        document.getElementById('quiz').style.display = 'none';
-        document.getElementById('results').style.display = 'block';
+            scores = new Array(20).fill(0);
+            applicabilityArray = new Array(20).fill(1);
 
-        document.getElementById('strategies').innerHTML = strategyScores
-            .filter(item => item.score > 0 || !item.isApplicable)
-            .map(item => {
-                const isTopThree = topThree.has(item.strategy);
-                return `
-                    <div class="strategy-score ${!item.isApplicable ? 'not-applicable' : ''} ${isTopThree ? 'top-three' : ''}">
-                        <strong>${item.strategy}:</strong>
-                        <span class="score-value">
-                            ${item.score}
-                            ${!item.isApplicable ? '<span class="na-label">- Not Applicable</span>' : ''}
-                        </span>
+            for (let i = 0; i < quizData.length; i++) {
+                const questionResult = calculateQuestionScores(i);
+                for (let j = 0; j < 20; j++) {
+                    scores[j] += questionResult.scores[j];
+                    if (questionResult.na[j] === 0) applicabilityArray[j] = 0;
+                }
+            }
+
+            let strategyScores = strategies.map((strategy, index) => ({
+                strategy: strategy,
+                score: scores[index],
+                isApplicable: applicabilityArray[index]
+            }));
+
+            strategyScores.sort((a, b) => {
+                if (!a.isApplicable && b.isApplicable) return 1;
+                if (a.isApplicable && !b.isApplicable) return -1;
+                return b.score - a.score;
+            });
+
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+
+            document.getElementById('strategies').innerHTML = strategyScores
+                .filter(item => item.score > 0 || !item.isApplicable)
+                .map(item => `
+                    <div class="strategy-score ${!item.isApplicable ? 'not-applicable' : ''}">
+                        <strong>${item.strategy}:</strong> ${!item.isApplicable ? '- Not Applicable' : item.score}
                     </div>
-                `;
-            }).join('');
-    }
+                `).join('');
+        }
 
-    // Rest of the code remains exactly the same
-</script>
+        function restartQuiz() {
+            currentQuestion = 0;
+            scores = new Array(20).fill(0);
+            applicabilityArray = new Array(20).fill(1);
+            document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => input.checked = false);
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+            document.getElementById('error-message').style.display = 'none';
+            showQuestion(0);
+        }
 
+        initializeQuiz();
+    </script>
 </body>
 </html>
