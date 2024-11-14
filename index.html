@@ -131,7 +131,7 @@
         // Quiz data with separate scoring and NA arrays
         const quizData = [
             {
-                question: "What type of intellectual property is involved?",
+                question: "1-1) What is the nature of your concern?",
                 options: [
                     "Patents",
                     "Trademarks",
@@ -139,20 +139,51 @@
                     "Copyright",
                     "Design Rights"
                 ],
-                scoring: [
-                    [5,0,3,0,2,1,0,1,1,0,4,0,2,3,5,0,0,0,0,0],  // Patents
-                    [0,5,3,2,2,2,3,1,1,4,4,0,2,3,0,0,0,0,0,0],  // Trademarks
-                    [0,0,4,1,2,2,0,1,1,0,3,2,3,4,0,0,0,0,0,0],  // Trade Secrets
-                    [0,0,3,2,2,2,3,1,1,0,3,1,2,3,0,0,0,0,0,0],  // Copyright
-                    [0,0,3,1,2,2,2,1,1,3,4,0,2,3,0,0,0,0,0,0]   // Design Rights
-                ],
+
+ question:       "1-1) What is the nature of your concern?",
+options: [
+      "a) My intellectual property rights are being infringed",
+      "b) I am responding to allegations of infringement",
+      "c) Both parties claim infringement",
+      "d) Other intellectual property matter",
+      "e) I am seeking preventive measures against potential infringement",
+      "f) My product is being replicated without authorization",
+      "g) My website content is being duplicated without permission",
+      "h) I am facing unsubstantiated intellectual property claims",
+      "i) I need to initiate legal proceedings following a border seizure",
+      "j) I wish to oppose a pending intellectual property application",
+      "k) Unauthorized imports are infringing my intellectual property rights in Australia",
+
+],
+
+scoring: [
+      [1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,0,0,0,0]    , //    a) My intellectual property rights are being infringed
+      [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0]    , //    b) I am responding to allegations of infringement
+      [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0]    , //    c) Both parties claim infringement
+      [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0]    , //    d) Other intellectual property matter
+      [1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,0,0,0,0]    , //    e) I am seeking preventive measures against potential infringement
+      [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0]    , //    f) My product is being replicated without authorization
+      [-1,-1,1,1,1,1,-1,-1,-1,-1,1,-1,1,-1,-1,0,0,0,0,0]    , //    g) My website content is being duplicated without permission
+      [0,0,1,1,1,1,1,0,1,-1,1,0,1,-1,1,0,0,0,0,0]    , //    h) I am facing unsubstantiated intellectual property claims
+      [-1,1,1,1,1,1,-1,-1,1,-1,1,-1,1,-1,-1,0,0,0,0,0]    , //    i) I need to initiate legal proceedings following a border seizure
+      [1,1,1,1,1,0,0,-1,0,-1,1,-1,1,-1,1,0,0,0,0,0]    , //    j) I wish to oppose a pending intellectual property application
+      [-1,-1,-1,1,-1,1,0,0,-1,1,1,1,1,-1,-1,0,0,0,0,0]    , //    k) Unauthorized imports are infringing my intellectual property rights in Australia
+],
+
                 naMarkers: [  // 1 means applicable, 0 means NA
-                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],  // Patents
-                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],  // Trademarks
-                    [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],  // Trade Secrets
-                    [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],  // Copyright
-                    [1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0]   // Design Rights
-                ]
+
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    a) My intellectual property rights are being infringed
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    b) I am responding to allegations of infringement
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    c) Both parties claim infringement
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    d) Other intellectual property matter
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    e) I am seeking preventive measures against potential infringement
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    f) My product is being replicated without authorization
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    g) My website content is being duplicated without permission
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    h) I am facing unsubstantiated intellectual property claims
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    i) I need to initiate legal proceedings following a border seizure
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    j) I wish to oppose a pending intellectual property application
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]    , //    k) Unauthorized imports are infringing my intellectual property rights in Australia
+]
             },
             // Example of another question (add all your questions following this pattern)
             {
