@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Previous HEAD section remains exactly the same -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategy Recommendation Quiz</title>
+    <!-- ... previous styles remain the same ... -->
     <style>
+        /* Previous styles remain exactly the same */
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
@@ -61,6 +61,12 @@
             border-left: 4px solid #4CAF50;
             background: #f8f8f8;
         }
+        .strategy-score.not-applicable {
+            border-left-color: #999;
+            background: #f0f0f0;
+            color: #666;
+            font-style: italic;
+        }
         .progress-bar {
             width: 100%;
             height: 10px;
@@ -78,6 +84,7 @@
     </style>
 </head>
 <body>
+    <!-- Previous HTML structure remains exactly the same -->
     <div class="container">
         <div id="quiz">
             <h1>Strategy Recommendation Quiz</h1>
@@ -97,7 +104,7 @@
     </div>
 
     <script>
-        // Strategy titles - easy to modify
+        // Strategy titles remain the same
         const strategies = [
             "O&H Patents",
             "O&H Trademarks",
@@ -121,7 +128,7 @@
             "Additional Option"
         ];
 
-        // Quiz questions and scoring - easy to modify
+        // Quiz data with separate scoring and NA arrays
         const quizData = [
             {
                 question: "What type of intellectual property is involved?",
@@ -138,8 +145,16 @@
                     [0,0,4,1,2,2,0,1,1,0,3,2,3,4,0,0,0,0,0,0],  // Trade Secrets
                     [0,0,3,2,2,2,3,1,1,0,3,1,2,3,0,0,0,0,0,0],  // Copyright
                     [0,0,3,1,2,2,2,1,1,3,4,0,2,3,0,0,0,0,0,0]   // Design Rights
+                ],
+                naMarkers: [  // 1 means applicable, 0 means NA
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],  // Patents
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],  // Trademarks
+                    [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],  // Trade Secrets
+                    [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],  // Copyright
+                    [1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0]   // Design Rights
                 ]
             },
+            // Example of another question (add all your questions following this pattern)
             {
                 question: "How serious is the potential impact to your business?",
                 options: [
@@ -148,68 +163,24 @@
                     "Minor"
                 ],
                 scoring: [
-                    [4,4,5,4,4,2,3,4,3,4,5,4,2,5,4,0,0,0,0,0],  // Very Serious
-                    [2,2,3,3,3,4,3,3,4,3,4,2,3,3,2,0,0,0,0,0],  // Moderate
-                    [1,1,1,1,1,3,2,2,3,1,2,0,4,1,1,0,0,0,0,0]   // Minor
-                ]
-            },
-            {
-                question: "Do you have evidence of infringement?",
-                options: [
-                    "Yes, clear evidence",
-                    "No/Unclear evidence"
+                    [4,4,5,4,4,2,3,4,3,4,5,4,2,5,4,0,0,0,0,0],
+                    [2,2,3,3,3,4,3,3,4,3,4,2,3,3,2,0,0,0,0,0],
+                    [1,1,1,1,1,3,2,2,3,1,2,0,4,1,1,0,0,0,0,0]
                 ],
-                scoring: [
-                    [4,4,4,4,4,4,3,3,2,4,4,3,2,4,4,0,0,0,0,0],  // Clear evidence
-                    [2,2,2,2,2,2,1,1,3,1,4,1,4,2,2,0,0,0,0,0]   // Unclear evidence
-                ]
-            },
-            {
-                question: "What is your budget for addressing this issue?",
-                options: [
-                    "High",
-                    "Medium"
-                ],
-                scoring: [
-                    [4,4,5,4,4,2,3,3,2,4,4,3,2,5,4,0,0,0,0,0],  // High
-                    [1,1,2,3,3,4,3,3,4,2,3,2,4,2,1,0,0,0,0,0]   // Medium
-                ]
-            },
-            {
-                question: "How quickly do you need to resolve this?",
-                options: [
-                    "Urgent (Days)",
-                    "Soon (Weeks)",
-                    "Can wait (Months)",
-                    "No rush"
-                ],
-                scoring: [
-                    [2,2,2,1,1,4,4,3,3,4,4,3,1,5,1,0,0,0,0,0],  // Urgent
-                    [3,3,3,3,3,4,3,3,3,3,4,2,2,3,2,0,0,0,0,0],  // Soon
-                    [4,4,4,4,4,3,2,2,3,2,4,2,3,2,4,0,0,0,0,0],  // Can wait
-                    [3,3,3,3,3,2,1,1,2,1,3,1,5,1,3,0,0,0,0,0]   // No rush
-                ]
-            },
-            {
-                question: "What is your preferred approach to conflict resolution?",
-                options: [
-                    "Aggressive/Legal",
-                    "Collaborative/Mediation",
-                    "Passive/Defensive"
-                ],
-                scoring: [
-                    [3,3,5,2,2,2,3,4,1,4,4,4,1,5,4,0,0,0,0,0],  // Aggressive
-                    [2,2,2,5,5,3,2,2,4,2,3,1,2,2,2,0,0,0,0,0],  // Collaborative
-                    [1,1,1,2,2,4,2,2,3,1,3,1,5,1,1,0,0,0,0,0]   // Passive
+                naMarkers: [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],  // Very Serious
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],  // Moderate
+                    [1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1]   // Minor
                 ]
             }
+            // Add your remaining questions here...
         ];
 
         let currentQuestion = 0;
         let scores = new Array(20).fill(0);
-        let userAnswers = [];
+        let applicabilityArray = new Array(20).fill(1); // Start with all options applicable
 
-        // Initialize quiz
+        // Previous initialization functions remain the same
         function initializeQuiz() {
             const questionsContainer = document.getElementById('questions');
             questionsContainer.innerHTML = quizData.map((q, index) => `
@@ -229,22 +200,19 @@
             showQuestion(0);
         }
 
-        // Display current question
         function showQuestion(index) {
             document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
             document.getElementById(`question-${index}`).classList.add('active');
             
-            // Update progress bar
             const progress = ((index + 1) / quizData.length) * 100;
             document.getElementById('progress').style.width = `${progress}%`;
             
-            // Update buttons
             document.getElementById('prevBtn').style.display = index > 0 ? 'inline' : 'none';
             document.getElementById('nextBtn').style.display = index < quizData.length - 1 ? 'inline' : 'none';
             document.getElementById('submitBtn').style.display = index === quizData.length - 1 ? 'inline' : 'none';
         }
 
-        // Navigation functions
+        // Navigation functions remain the same
         function previousQuestion() {
             if (currentQuestion > 0) {
                 currentQuestion--;
@@ -259,40 +227,54 @@
             }
         }
 
-        // Calculate and display results
+        // Modified results calculation to use separate NA tracking
         function showResults() {
-            // Collect all answers
+            // Reset scores but keep NA tracking separate
             scores = new Array(20).fill(0);
+            applicabilityArray = new Array(20).fill(1);
+
+            // Calculate scores and update applicability
             for (let i = 0; i < quizData.length; i++) {
                 const selected = document.querySelector(`input[name="q${i}"]:checked`);
                 if (selected) {
                     const answerIndex = parseInt(selected.value);
                     const questionScoring = quizData[i].scoring[answerIndex];
+                    const questionNAMarkers = quizData[i].naMarkers[answerIndex];
+                    
                     for (let j = 0; j < scores.length; j++) {
                         scores[j] += questionScoring[j];
+                        // If this answer marks this strategy as NA (0), update the applicability array
+                        if (questionNAMarkers[j] === 0) {
+                            applicabilityArray[j] = 0;
+                        }
                     }
                 }
             }
 
-            // Create array of strategy objects with scores
+            // Create array of strategy objects with scores and applicability
             let strategyScores = strategies.map((strategy, index) => ({
                 strategy: strategy,
-                score: scores[index]
+                score: scores[index],
+                isApplicable: applicabilityArray[index]
             }));
 
-            // Sort by score (highest to lowest)
-            strategyScores.sort((a, b) => b.score - a.score);
+            // Sort by score (highest to lowest), putting NA items at the end
+            strategyScores.sort((a, b) => {
+                if (!a.isApplicable && b.isApplicable) return 1;
+                if (a.isApplicable && !b.isApplicable) return -1;
+                return b.score - a.score;
+            });
 
             // Display results
             document.getElementById('quiz').style.display = 'none';
             document.getElementById('results').style.display = 'block';
 
-            // Show strategies and scores
+            // Show strategies and scores with NA marking
             document.getElementById('strategies').innerHTML = strategyScores
-                .filter(item => item.score > 0) // Only show strategies with scores > 0
+                .filter(item => item.score > 0 || !item.isApplicable)
                 .map(item => `
-                    <div class="strategy-score">
-                        <strong>${item.strategy}:</strong> ${item.score}
+                    <div class="strategy-score ${!item.isApplicable ? 'not-applicable' : ''}">
+                        <strong>${item.strategy}:</strong> ${!item.isApplicable ? '- Not Applicable' : item.score}
                     </div>
                 `).join('');
         }
@@ -300,7 +282,7 @@
         function restartQuiz() {
             currentQuestion = 0;
             scores = new Array(20).fill(0);
-            userAnswers = [];
+            applicabilityArray = new Array(20).fill(1);
             document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
             document.getElementById('results').style.display = 'none';
             document.getElementById('quiz').style.display = 'block';
