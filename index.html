@@ -308,7 +308,8 @@
                 .filter(item => item.score > 0 || !item.isApplicable)
                 .map(item => `
                     <div class="strategy-score ${!item.isApplicable ? 'not-applicable' : ''}">
-                        <strong>${item.strategy}:</strong> ${!item.isApplicable ? '- Not Applicable' : item.score}
+                      
+                        <strong>${item.strategy}:</strong> ${item.score}${!item.isApplicable ? ' - Not Applicable' : ''}
                     </div>
                 `).join('');
         }
