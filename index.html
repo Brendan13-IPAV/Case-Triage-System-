@@ -140,54 +140,54 @@
 
              
             
-            {
+            // {
              
                 
-                question: "What type of intellectual property is involved? (Select all that apply)",
-                options: [
-                    "Patents",
-                    "Trademarks",
-                    "Trade Secrets",
-                    "Copyright",
-                    "Design Rights"
-                ],
-                multiSelect: true,
-                scoring: [
-                    [5,0,3,0,2,1,0,1,1,0,4,0,2,3,5,0,0,0,0,0],
-                    [0,5,3,2,2,2,3,1,1,4,4,0,2,3,0,0,0,0,0,0],
-                    [0,0,4,1,2,2,0,1,1,0,3,2,3,4,0,0,0,0,0,0],
-                    [0,0,3,2,2,2,3,1,1,0,3,1,2,3,0,0,0,0,0,0],
-                    [0,0,3,1,2,2,2,1,1,3,4,0,2,3,0,0,0,0,0,0]
-                ],
-                naMarkers: [
-                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],
-                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
-                    [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],
-                    [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],
-                    [1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0]
-                ],
-                required: true
-            },
-            {
-                question: "How serious is the potential impact to your business?",
-                options: [
-                    "Very Serious",
-                    "Moderate",
-                    "Minor"
-                ],
-                multiSelect: false,
-                scoring: [
-                    [4,4,5,4,4,2,3,4,3,4,5,4,2,5,4,0,0,0,0,0],
-                    [2,2,3,3,3,4,3,3,4,3,4,2,3,3,2,0,0,0,0,0],
-                    [1,1,1,1,1,3,2,2,3,1,2,0,4,1,1,0,0,0,0,0]
-                ],
-                naMarkers: [
-                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-                    [1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1]
-                ],
-                required: true
-            },
+            //     question: "What type of intellectual property is involved? (Select all that apply)",
+            //     options: [
+            //         "Patents",
+            //         "Trademarks",
+            //         "Trade Secrets",
+            //         "Copyright",
+            //         "Design Rights"
+            //     ],
+            //     multiSelect: true,
+            //     scoring: [
+            //         [5,0,3,0,2,1,0,1,1,0,4,0,2,3,5,0,0,0,0,0],
+            //         [0,5,3,2,2,2,3,1,1,4,4,0,2,3,0,0,0,0,0,0],
+            //         [0,0,4,1,2,2,0,1,1,0,3,2,3,4,0,0,0,0,0,0],
+            //         [0,0,3,2,2,2,3,1,1,0,3,1,2,3,0,0,0,0,0,0],
+            //         [0,0,3,1,2,2,2,1,1,3,4,0,2,3,0,0,0,0,0,0]
+            //     ],
+            //     naMarkers: [
+            //         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],
+            //         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
+            //         [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],
+            //         [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],
+            //         [1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0]
+            //     ],
+            //     required: true
+            // },
+            // {
+            //     question: "How serious is the potential impact to your business?",
+            //     options: [
+            //         "Very Serious",
+            //         "Moderate",
+            //         "Minor"
+            //     ],
+            //     multiSelect: false,
+            //     scoring: [
+            //         [4,4,5,4,4,2,3,4,3,4,5,4,2,5,4,0,0,0,0,0],
+            //         [2,2,3,3,3,4,3,3,4,3,4,2,3,3,2,0,0,0,0,0],
+            //         [1,1,1,1,1,3,2,2,3,1,2,0,4,1,1,0,0,0,0,0]
+            //     ],
+            //     naMarkers: [
+            //         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            //         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            //         [1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1]
+            //     ],
+            //     required: true
+            // },
     
  {
         // Question 1-1    
@@ -357,6 +357,617 @@
             [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option h
             [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option i
             [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option k
+        ],
+        required: false
+    },
+
+            {
+        // Question 2-2
+        question: "2-2) What is the ownership status of the registered (or pending) intellectual property?",
+        options: [
+            "a) I own the registered rights",
+            "b) The other party owns the registered rights",
+            "c) Both parties hold registered rights or pending applications",
+            "d) My pending IP is being opposed"
+        ],
+        multiSelect: false,
+        scoring: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,0,0,0,0],     // Option a
+            [1,1,1,1,1,1,0,0,1,-1,1,-1,1,-1,1,0,0,0,0,0],    // Option b
+            [1,1,0,1,1,1,-1,-1,1,0,1,0,1,0,0,0,0,0,0,0],     // Option c
+            [5,5,-1,-1,-1,0,-1,-1,-1,-1,3,-1,-1,-1,0,0,0,0,0,0]      // Option d
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option c
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option d
+        ],
+        required: false
+    },
+    {
+        // Question 2-3
+        question: "2-3) What is the current status of the intellectual property right?",
+        options: [
+            "a) Active registration period",
+            "b) Approaching expiration",
+            "c) Expired",
+            "d) In opposition/hearing period",
+            "e) Under examination"
+        ],
+        multiSelect: false,
+        scoring: [
+            [-1,-1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0],     // Option a
+            [-1,-1,-1,-1,-1,-1,1,0,-1,-1,1,-1,1,-1,-1,0,0,0,0,0],     // Option b
+            [-1,-1,-1,-1,-1,-1,1,0,-1,-1,1,-1,1,-1,-1,0,0,0,0,0],     // Option c
+            [1,1,1,1,1,1,1,0,1,1,1,1,1,-1,1,0,0,0,0,0],     // Option d
+            [1,1,-1,1,1,1,1,0,1,-1,1,1,1,-1,-1,0,0,0,0,0]      // Option e
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option c
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option d
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option e
+        ],
+        required: false
+    },
+    {
+        // Question 2-6
+        question: "2-6) Has your intellectual property right been challenged during examination?",
+        options: [
+            "a) Yes",
+            "b) No"
+        ],
+        multiSelect: false,
+        scoring: [
+            [5,5,1,5,5,1,0,0,1,-1,3,-1,0,-1,0,0,0,0,0,0],     // Option a
+            [1,1,1,1,1,1,1,0,1,1,1,1,1,-1,1,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 2-7
+        question: "2-7) Do you contest the validity of the intellectual property right in question?",
+        options: [
+            "a) Yes, it conflicts with my existing rights",
+            "b) Yes, due to legal/public interest/quality concerns",
+            "c) No, validity is not at issue"
+        ],
+        multiSelect: false,
+        scoring: [
+            [1,1,1,1,1,1,-1,0,1,-1,1,-1,1,-1,1,0,0,0,0,0],     // Option a
+            [1,1,1,1,1,1,-1,0,-1,-1,1,-1,1,-1,1,0,0,0,0,0],    // Option b
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0]      // Option c
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1]      // Option c
+        ],
+        required: false
+    },
+
+            {
+        // Question 3-1
+        question: "3-1) What is the size of your business?",
+        options: [
+            "a) Sole trader",
+            "b) 2-50 employees",
+            "c) 51-100 employees",
+            "d) Over 100 employees"
+        ],
+        multiSelect: false,
+        scoring: [
+            [1,1,-1,1,1,1,1,0,1,1,1,1,1,0,1,0,0,0,0,0],     // Option a
+            [1,1,-1,1,1,1,1,0,1,1,1,1,1,-1,1,0,0,0,0,0],    // Option b
+            [1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0],     // Option c
+            [1,1,1,1,1,0,0,0,-1,1,1,1,1,1,1,0,0,0,0,0]      // Option d
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option c
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option d
+        ],
+        required: false
+    },
+    {
+        // Question 3-2
+        question: "3-2) Does this dispute involve any of the following sectors?",
+        options: [
+            "a) None of the listed sectors",
+            "b) Pharmaceutical industry",
+            "c) Mining industry",
+            "d) Gaming industry",
+            "e) Defence industry"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option a
+            [0,0,1,0,-1,-1,-1,1,-1,0,1,0,-1,1,0,0,0,0,0,0],    // Option b
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option c
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option d
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]      // Option e
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option c
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option d
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option e
+        ],
+        required: false
+    },
+    {
+        // Question 3-3
+        question: "3-3) What is your business relationship with the other party?",
+        options: [
+            "a) No prior relationship",
+            "b) Current or previous commercial relationship exists"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,0,1,1,1,1,-1,1,1,1,-1,-1,0,0,0,0,0,0,0],     // Option a
+            [-1,-1,-1,1,1,-1,-1,-1,1,-1,1,-1,-1,-1,-1,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 2-5 (keeping original question order)
+        question: "2-5) Does the matter relate to Indigenous knowledge?",
+        options: [
+            "a) Yes",
+            "b) No"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option a
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 4-1
+        question: "4-1) Which statement best describes the jurisdictional status of the parties?",
+        options: [
+            "a) All parties are Australian entities",
+            "b) I represent an Australian business dealing with party/parties from other countries",
+            "c) I represent a business from another country dealing with Australian party/parties",
+            "d) All parties are from countries other than Australia"
+        ],
+        multiSelect: false,
+        scoring: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],     // Option a
+            [1,1,1,1,1,1,1,1,-1,-1,1,1,1,1,1,0,0,0,0,0],    // Option b
+            [1,1,1,1,1,1,1,1,-1,-1,1,1,1,1,1,0,0,0,0,0],    // Option c
+            [-1,-1,-1,1,-1,1,1,-1,-1,1,1,-1,1,-1,-1,0,0,0,0,0]      // Option d
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option c
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option d
+        ],
+        required: false
+    },
+    {
+        // Question 4-2
+        question: "4-2) Are allegedly infringing products being imported into Australia?",
+        options: [
+            "a) Yes",
+            "b) No"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,1,1,1,1,1,0,1,10,1,1,0,1,-1,0,0,0,0,0],     // Option a
+            [0,0,1,1,1,1,1,0,1,-10,1,1,0,1,-1,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 4-3
+        question: "4-3) In which region do the parties primarily operate? (Select all which apply)",
+        options: [
+            "a) China",
+            "b) New Zealand",
+            "c) United States",
+            "d) ASEAN Countries",
+            "e) European Union",
+            "f) Australia Only"
+        ],
+        multiSelect: true,
+        scoring: [
+            [0,0,0,3,0,5,5,0,0,1,1,1,1,0,0,0,0,0,0,0],     // Option a
+            [0,0,0,3,0,5,5,0,0,1,1,1,1,0,0,0,0,0,0,0],     // Option b
+            [0,0,0,3,0,5,5,0,0,1,1,1,1,0,0,0,0,0,0,0],     // Option c
+            [0,0,0,3,0,5,5,0,0,1,1,1,1,0,0,0,0,0,0,0],     // Option d
+            [1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],     // Option e
+            [0,0,0,3,0,5,5,0,0,1,1,1,1,0,0,0,0,0,0,0]      // Option f
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option c
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option d
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option e
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option f
+        ],
+        required: false
+    },
+            {
+        // Question 5-1
+        question: "5-1) What is your primary objective?",
+        options: [
+            "a) Obtain financial compensation for infringement",
+            "b) Prevent further infringement",
+            "c) Respond to claims of infringement/continue to operate"
+        ],
+        multiSelect: false,
+        scoring: [
+            [-1,-1,1,1,1,1,-1,0,1,-1,1,-1,0,0,-1,0,0,0,0,0],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,0,0,0],     // Option b
+            [1,1,0,1,1,1,-1,-1,1,0,1,-1,1,1,0,0,0,0,0,0]      // Option c
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option c
+        ],
+        required: false
+    },
+    {
+        // Question 5-2
+        question: "5-2) How important is the timeline for resolution?",
+        options: [
+            "a) Urgent/time-critical",
+            "b) Expedited resolution preferred",
+            "c) Quality of resolution takes precedence"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,-1,1,1,1,1,0,0,1,0,-1,-1,5,0,0,0,0,0,0],     // Option a
+            [3,3,0,1,1,1,1,0,1,1,1,0,0,1,1,0,0,0,0,0],     // Option b
+            [1,1,3,1,0,0,0,0,0,0,1,1,0,-1,1,0,0,0,0,0]      // Option c
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option c
+        ],
+        required: false
+    },
+    {
+        // Question 5-3
+        question: "5-3) How likely are both parties to agree to engage in negotiations?",
+        options: [
+            "a) Very likely",
+            "b) Not sure",
+            "c) Very Unlikely"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,-1,1,1,1,0,0,1,0,1,-1,-1,-1,-1,0,0,0,0,0],     // Option a
+            [0,0,0,0,0,1,0,0,1,1,1,-1,-1,-1,-1,0,0,0,0,0],     // Option b
+            [0,0,1,-1,-1,-1,1,1,0,1,1,1,0,1,1,0,0,0,0,0]      // Option c
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option c
+        ],
+        required: false
+    },
+    {
+        // Question 5-4
+        question: "5-4) Would either party require confidentiality when resolving this issue (due to trade secrets, pending patents, etc)?",
+        options: [
+            "a) Yes",
+            "b) No / Not Sure"
+        ],
+        multiSelect: false,
+        scoring: [
+            [-1,-1,-1,1,1,1,0,0,1,0,1,0,1,-1,0,0,0,0,0,0],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 5-5
+        question: "5-5) Is publicity a concern for either party?",
+        options: [
+            "a) yes",
+            "b) No / Not sure"
+        ],
+        multiSelect: false,
+        scoring: [
+            [-1,-1,-1,1,1,1,-1,-1,1,-1,1,-1,1,-1,-1,0,0,0,0,0],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 5-6
+        question: "5-6) What level of financial commitment are you prepared to make?",
+        options: [
+            "a) Willing to exceed the value of the right",
+            "b) Willing to invest up to the value of the right",
+            "c) Limited financial resources available"
+        ],
+        multiSelect: false,
+        scoring: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,-1,1,0,0,0,0,0,0],     // Option a
+            [1,1,0,1,1,1,1,1,1,1,1,1,-1,1,1,0,0,0,0,0],     // Option b
+            [-1,-1,-1,0,1,5,5,1,1,1,0,1,1,-1,1,0,0,0,0,0]      // Option c
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option c
+        ],
+        required: false
+    },
+    {
+        // Question 5-7
+        question: "5-7) What is the likelihood of reaching a financial settlement?",
+        options: [
+            "a) Very likely",
+            "b) Not sure",
+            "c) Very Unlikely"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,-1,5,5,1,0,-1,3,-1,1,-1,-1,-1,-1,0,0,0,0,0],     // Option a
+            [1,1,0,1,1,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0],     // Option b
+            [1,1,1,-1,-1,-1,1,1,0,1,1,1,0,1,1,0,0,0,0,0]      // Option c
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option c
+        ],
+        required: false
+    },
+    {
+        // Question 5-8
+        question: "5-8) Are alternative commercial arrangements (e.g., licensing) possible?",
+        options: [
+            "a) Very likely",
+            "b) Not sure",
+            "c) Very Unlikely"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,-1,1,1,1,0,-1,1,-1,1,-1,-1,-1,-1,0,0,0,0,0],     // Option a
+            [1,1,0,1,1,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0],     // Option b
+            [1,1,1,-1,-1,-1,1,1,0,1,1,1,0,1,1,0,0,0,0,0]      // Option c
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option c
+        ],
+        required: false
+    },
+            {
+        // Question 6-1
+        question: "6-1) Have you engaged professional services?",
+        options: [
+            "a) Yes",
+            "b) No"
+        ],
+        multiSelect: false,
+        scoring: [
+            [1,1,1,1,1,-1,1,1,0,1,-1,1,-1,1,1,0,0,0,0,0],     // Option a
+            [0,0,-1,0,1,1,1,0,3,1,5,1,-1,0,1,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 6-2
+        question: "6-2) Have you engaged any of these professional services? (select all which apply)",
+        options: [
+            "a) patent or trademark attorney",
+            "b) IP Insurance company/policy",
+            "c) IP Commercialisation Consultant (eg Accountant)",
+            "d) IP Lawyer",
+            "e) Solicitor / general legal council"
+        ],
+        multiSelect: true,
+        scoring: [
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option a
+            [-1,-1,-5,0,0,1,0,0,1,0,1,0,1,0,1,0,0,0,0,0],    // Option b
+            [-1,-1,-1,1,1,0,1,0,1,1,1,1,1,1,1,0,0,0,0,0],    // Option c
+            [0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0],     // Option d
+            [1,1,0,1,1,0,1,0,-1,1,1,0,1,1,1,0,0,0,0,0]      // Option e
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option c
+            [1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1],     // Option d
+            [1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1]      // Option e
+        ],
+        required: false
+    },
+    {
+        // Question 6-3
+        question: "6-3) Does the other party have legal representation?",
+        options: [
+            "a) Yes",
+            "b) No/ Don't know"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,0,1,1,1,1,0,1,0,5,0,0,0,0,0,0,0,0,0],     // Option a
+            [0,0,0,1,1,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 6-4
+        question: "6-4) Do you have a complaint or concerns about your professional representation?",
+        options: [
+            "a) Yes",
+            "b) No"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option a
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 6-5
+        question: "6-5) Are any of the following proceedings active or pending? (select all which apply)",
+        options: [
+            "a) Civil litigation",
+            "b) Criminal proceedings",
+            "c) Administrative proceedings",
+            "d) Bankruptcy proceedings",
+            "e) IP Australia oppositions/hearings",
+            "f) Other proceedings"
+        ],
+        multiSelect: true,
+        scoring: [
+            [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option a
+            [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option b
+            [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option c
+            [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     // Option d
+            [0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],    // Option e
+            [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]      // Option f
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option c
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option d
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option e
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option f
+        ],
+        required: false
+    },
+    {
+        // Question 7-1
+        question: "7-1) Have any resolution attempts been made?",
+        options: [
+            "a) No",
+            "b) Yes"
+        ],
+        multiSelect: false,
+        scoring: [
+            [0,0,-1,3,3,1,1,0,1,1,1,0,-1,0,0,0,0,0,0,0],     // Option a
+            [1,1,1,1,1,0,1,0,1,1,1,1,0,1,1,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 7-2
+        question: "7-2) What activities have been attempted? (select all which apply)",
+        options: [
+            "a) Alternative dispute resolution (mediation, arbitration, negotiation)",
+            "b) I have responded to a letter of demand/cease & desist",
+            "c) I have sent a letter of demand/cease & desist",
+            "d) Informal communication between parties",
+            "e) Engagement with regulatory bodies (eg ASBFEO, XYZ Ombudsman)",
+            "f) None",
+            "g) Reporting to online platforms"
+        ],
+        multiSelect: true,
+        scoring: [
+            [1,1,1,-1,-1,-1,1,0,-1,1,1,1,0,1,1,0,0,0,0,0],     // Option a
+            [1,1,1,1,1,0,1,0,1,0,1,1,0,0,1,0,0,0,0,0],     // Option b
+            [1,1,1,1,1,-1,1,0,1,1,0,1,0,0,1,0,0,0,0,0],     // Option c
+            [1,1,1,1,1,1,1,0,1,1,1,1,0,0,1,0,0,0,0,0],     // Option d
+            [1,1,3,1,1,-1,1,-1,-1,1,1,1,1,0,1,0,0,0,0,0],    // Option e
+            [0,0,0,0,0,5,1,1,1,0,1,0,1,-1,0,0,0,0,0,0],     // Option f
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]      // Option g
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option b
+            [1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option c
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option d
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option e
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option f
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option g
+        ],
+        required: false
+    },
+    {
+        // Question 7-3
+        question: "7-3) Do you have the other party's contact information?",
+        options: [
+            "a) No",
+            "b) Yes"
+        ],
+        multiSelect: false,
+        scoring: [
+            [1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0],     // Option a
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
+        ],
+        required: false
+    },
+    {
+        // Question 7-5
+        question: "7-5) How has the other party responded to communication?",
+        options: [
+            "a) No response received",
+            "b) Response received"
+        ],
+        multiSelect: false,
+        scoring: [
+            [1,1,1,-1,-1,-1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],     // Option a
+            [-1,-1,-1,1,1,-1,-1,-1,1,-1,1,-1,-1,-1,-1,0,0,0,0,0]      // Option b
+        ],
+        naMarkers: [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],     // Option a
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]      // Option b
         ],
         required: false
     },
