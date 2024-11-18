@@ -994,91 +994,63 @@
 
         // Add this object after your quizData array to define skip conditions
 const skipConditions = {
-                                        
-    'question-6': {                     // this is question 2-2
-        skipIfQuestion: 5,             // this is question  2-1
-        skipIfAnswers: [7]              // array index of "h) Uncertain"
+    'question-6': {
+        skipIfQuestion: 5,
+        skipIfAnswers: [7, 9]  // Combined both conditions into one array
     },
-        'question-6': {                     // this is question 2-2
-        skipIfQuestion: 5,             // this is question  2-1
-        skipIfAnswers: [9]              // array index of k) no rights
+    
+    'question-7': {
+        skipIfQuestion: 5,
+        skipIfAnswers: [7, 9]  // Combined conditions for question 7
     },
-    'question-7': {                     // this is question 2-3
-        skipIfQuestion: 6,             // this is question 2-2
-        skipIfAnswers: [6]              // array index of option d0 my ip is being opposed
+    
+    'question-8': {
+        skipIfQuestion: 7,
+        skipIfAnswers: [2]
     },
-        'question-7': {                     // this is question 2-3
-        skipIfQuestion: 5,             // this is question  2-1
-        skipIfAnswers: [7]              // array index of "h) Uncertain"
+    
+    'question-9': {
+        skipIfQuestion: 7,
+        skipIfAnswers: [2]
     },
-        'question-7': {                     // this is question 2-3
-        skipIfQuestion: 5,             // this is question  2-1
-        skipIfAnswers: [9]              // array index of k) no rights
+    
+    'question-27': {
+        skipIfQuestion: 26,
+        skipIfAnswers: [1]
     },
-        'question-8': {                     // this is question 2-6
-        skipIfQuestion: 7,             // this is question  2-3
-        skipIfAnswers: [2]              // array index of c) Expired
+    
+    'question-29': {
+        skipIfQuestion: 26,
+        skipIfAnswers: [1]
     },
-
-      'question-8': {                     // this is question 2-6
-        skipIfQuestion: 5,             // this is question  2-1
-        skipIfAnswers: [7]              // array index of "h) Uncertain"
+    
+    'question-32': {
+        skipIfQuestion: 31,
+        skipIfAnswers: [0]
     },
-        'question-8': {                     // this is question 2-6
-        skipIfQuestion: 5,             // this is question  2-1
-        skipIfAnswers: [9]              // array index of k) no rights
+    
+    'question-33': {
+        skipIfQuestion: 32,
+        skipIfAnswers: [0, 1, 2, 3]
     },
-        'question-9': {                     // this is question 2-7
-        skipIfQuestion: 7,             // this is question  2-3
-        skipIfAnswers: [2]              // array index of c) Expired
-    },
-              'question-9': {                     // this is question 2-7
-        skipIfQuestion: 5,             // this is question  2-1
-        skipIfAnswers: [7]              // array index of "h) Uncertain"
-    },
-        'question-9': {                     // this is question 2-7
-        skipIfQuestion: 5,             // this is question  2-1
-        skipIfAnswers: [9]              // array index of k) no rights
-    },
-        'question-27': {                 // this is question 6-2
-        skipIfQuestion: 26,             // this is question  6-1
-        skipIfAnswers: [1]              // array index of b) no - i havent engaged any professional services.
-    },
-        'question-29': {                  // this is question 6-4
-        skipIfQuestion: 26,             // this is question  6-1
-        skipIfAnswers: [1]              // array index of b) no - i havent engaged any professional services.
-    },
-        'question-32': {                  // this is question 7-2
-        skipIfQuestion: 31,             // this is question  7-1 - have you attempted resolutions
-        skipIfAnswers: [0]              // array index of a) no - i havent attempted resolution
-    },
-        'question-33': {                  // this is question 7-3
-        skipIfQuestion: 32,             // this is question  7-2 - activities attempted
-        skipIfAnswers: [0,1,2,3]              // array index of a)
-    },
- 
-    skipConditions['question-34'] = {  // Last question (7-5)
-    conditions: [
-        {
-            question: 31,  // Question 7-1 "Have any resolution attempts been made?"
-            answers: [0]   // If they answered "No"
-        },
-        {
-            question: 33,  // Question 7-3 "Do you have the other party's contact information?"
-            answers: [0]   // If they answered "No"
-        },
-        {
-            question: 32,  // this is question  7-2 - what's been attempted
-            answers: [1]   // b) i responded to C&D letter (implying that the other party has sent a letter to user.
-        }
-    ],
-    operator: 'OR'  // Skip if EITHER condition is true
-};
-    //So Format of skipping is;
-     //   'question-11': {                     // this is question number as per the list in the code, it's ordinal (start at zero?).  "Skip the 11th question if"
-    //    skipIfQuestion: 10,                     // this is question 4-1                                                                 "THIS question number..."
-     //   skipIfAnswers: [3]              // array index of option d - note that D is the 4th option, index starts at zero                "was answered like this"
-   // }
+    
+    'question-34': {  // Moved inside the main object
+        conditions: [
+            {
+                question: 31,
+                answers: [0]
+            },
+            {
+                question: 33,
+                answers: [0]
+            },
+            {
+                question: 32,
+                answers: [1]
+            }
+        ],
+        operator: 'OR'
+    }
 };
 
         let currentQuestion = 0;
