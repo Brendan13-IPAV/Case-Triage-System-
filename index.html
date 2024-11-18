@@ -128,8 +128,8 @@
             "Take No Action (but get advice)",
             "Injunction",
             "Patent re-examination",
-            "Additional Option",
-            "Additional Option",
+            "Consider licencing",
+            "Consider IP insurance",
             "Additional Option",
             "Additional Option",
             "Additional Option"
@@ -160,11 +160,11 @@
             //         [0,0,3,1,2,2,2,1,1,3,4,0,2,3,0,0,0,0,0,0]
             //     ],
             //     naMarkers: [
-            //         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],
-            //         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
-            //         [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],
-            //         [1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0],
-            //         [1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0]
+            //         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0],
+            //         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
+            //         [1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,0,0],
+            //         [1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,0,0],
+            //         [1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0]
             //     ],
             //     required: true
             // },
@@ -993,16 +993,92 @@
 
         // Add this object after your quizData array to define skip conditions
 const skipConditions = {
-                                        // Example: Skip question 2-2 if question 2-1 answer was "h) Uncertain"
-    'question-4': {                     // this is question 2-2
-        skipIfQuestion: 3,             // this is question 2-1 (index 3 in array, remembering they start at zero)
+                                        
+    'question-6': {                     // this is question 2-2
+        skipIfQuestion: 5,             // this is question  2-1
         skipIfAnswers: [7]              // array index of "h) Uncertain"
     },
-    'question-7': {                     // this is question ....
-        skipIfQuestion: 0,             // this is question 1-1
-        skipIfAnswers: [4]              // array index of option b
-    }
+        'question-6': {                     // this is question 2-2
+        skipIfQuestion: 5,             // this is question  2-1
+        skipIfAnswers: [9]              // array index of k) no rights
+    },
+    'question-7': {                     // this is question 2-3
+        skipIfQuestion: 6,             // this is question 2-2
+        skipIfAnswers: [6]              // array index of option d0 my ip is being opposed
+    },
+        'question-7': {                     // this is question 2-3
+        skipIfQuestion: 5,             // this is question  2-1
+        skipIfAnswers: [7]              // array index of "h) Uncertain"
+    },
+        'question-7': {                     // this is question 2-3
+        skipIfQuestion: 5,             // this is question  2-1
+        skipIfAnswers: [9]              // array index of k) no rights
+    },
+        'question-8': {                     // this is question 2-6
+        skipIfQuestion: 7,             // this is question  2-3
+        skipIfAnswers: [2]              // array index of c) Expired
+    },
 
+      'question-8': {                     // this is question 2-6
+        skipIfQuestion: 5,             // this is question  2-1
+        skipIfAnswers: [7]              // array index of "h) Uncertain"
+    },
+        'question-8': {                     // this is question 2-6
+        skipIfQuestion: 5,             // this is question  2-1
+        skipIfAnswers: [9]              // array index of k) no rights
+    },
+        'question-9': {                     // this is question 2-7
+        skipIfQuestion: 7,             // this is question  2-3
+        skipIfAnswers: [2]              // array index of c) Expired
+    },
+              'question-9': {                     // this is question 2-7
+        skipIfQuestion: 5,             // this is question  2-1
+        skipIfAnswers: [7]              // array index of "h) Uncertain"
+    },
+        'question-9': {                     // this is question 2-7
+        skipIfQuestion: 5,             // this is question  2-1
+        skipIfAnswers: [9]              // array index of k) no rights
+    },
+        'question-27': {                 // this is question 6-2
+        skipIfQuestion: 26,             // this is question  6-1
+        skipIfAnswers: [1]              // array index of b) no - i havent engaged any professional services.
+    },
+        'question-29': {                  // this is question 6-4
+        skipIfQuestion: 26,             // this is question  6-1
+        skipIfAnswers: [1]              // array index of b) no - i havent engaged any professional services.
+    },
+        'question-32': {                  // this is question 7-2
+        skipIfQuestion: 31,             // this is question  7-1 - have you attempted resolutions
+        skipIfAnswers: [0]              // array index of a) no - i havent attempted resolution
+    },
+        'question-33': {                  // this is question 7-3
+        skipIfQuestion: 32,             // this is question  7-2 - activities attempted
+        skipIfAnswers: [0]              // array index of a)
+    },
+          'question-33': {                  // this is question 7-3
+        skipIfQuestion: 32,             // this is question  7-2 - activities attempted
+        skipIfAnswers: [1]              // array index of b)
+    },
+          'question-33': {                  // this is question 7-3
+        skipIfQuestion: 32,             // this is question  7-2 - activities attempted
+        skipIfAnswers: [2]              // array index of c)
+    },
+          'question-33': {                  // this is question 7-3
+        skipIfQuestion: 32,             // this is question  7-2 - activities attempted
+        skipIfAnswers: [3]              // array index of d)
+    },
+          'question-34': {                  // this is question 7-5
+        skipIfQuestion: 33,             // this is question  7-3 - do you have other party info
+        skipIfAnswers: [0]              // array index of a) No i don't have their contact details
+    },
+            'question-34': {                  // this is question 7-5
+        skipIfQuestion: 31,             // this is question  7-1 - dany resolutiona ttempted
+        skipIfAnswers: [0]              // array index of a) No none
+    },
+         'question-34': {                  // this is question 7-5
+        skipIfQuestion: 32,             // this is question  7-2 - what's been attempted
+        skipIfAnswers: [1]              // array index of b) i responded to C&D letter (implying that the other party has sent a letter to user.
+    },
     //So Format of skipping is;
      //   'question-11': {                     // this is question number as per the list in the code, it's ordinal (start at zero?).  "Skip the 11th question if"
     //    skipIfQuestion: 10,                     // this is question 4-1                                                                 "THIS question number..."
