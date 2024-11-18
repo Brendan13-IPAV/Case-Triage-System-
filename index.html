@@ -1172,13 +1172,40 @@ function shouldSkipQuestion(questionIndex) {
     const skipRule = skipConditions[`question-${questionIndex}`];
     if (!skipRule) return false;
 
-    const previousAnswers = document.querySelectorAll(
-        `input[name="q${skipRule.skipIfQuestion}"]:checked`
-    );
-    
-    return Array.from(previousAnswers).some(answer => 
-        skipRule.skipIfAnswers.includes(parseInt(answer.value))
-    );
+    // Handle old format
+    if (skipRule.skipIfQuestion !== undefined) {
+        const previousAnswers = document.querySelectorAll(
+            `input[name="q${skipRule.skipIfQuestion}"]:checked`
+        );
+        return Array.from(previousAnswers).some(answer => 
+            skipRule.skipIfAnswers.includes(parseInt(answer.value))
+        );
+    }
+
+    // Handle new format with conditions
+    if (skipRule.conditions) {
+        if (skipRule.operator === 'OR') {
+            return skipRule.conditions.some(condition => {
+                const answers = document.querySelectorAll(
+                    `input[name="q${condition.question}"]:checked`
+                );
+                return Array.from(answers).some(answer => 
+                    condition.answers.includes(parseInt(answer.value))
+                );
+            });
+        } else if (skipRule.operator === 'AND') {
+            return skipRule.conditions.every(condition => {
+                const answers = document.querySelectorAll(
+                    `input[name="q${condition.question}"]:checked`
+                );
+                return Array.from(answers).some(answer => 
+                    condition.answers.includes(parseInt(answer.value))
+                );
+            });
+        }
+    }
+
+    return false;
 }
                                                                         //return to previous rules
         function calculateQuestionScores(questionIndex) {
