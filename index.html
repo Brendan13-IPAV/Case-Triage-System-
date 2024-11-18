@@ -990,7 +990,25 @@
         required: false
     },
    ];
-  
+
+        // Add this object after your quizData array to define skip conditions
+const skipConditions = {
+                                        // Example: Skip question 2-2 if question 2-1 answer was "h) Uncertain"
+    'question-4': {                     // this is question 2-2
+        skipIfQuestion: 3,             // this is question 2-1 (index 3 in array, remembering they start at zero)
+        skipIfAnswers: [7]              // array index of "h) Uncertain"
+    },
+                                        // Example: Skip question 4-2 if question 4-1 answer was "d) All parties are from countries other than Australia"
+    'question-1': {                     // this is question 1-2
+        skipIfQuestion: 0,             // this is question 1-1
+        skipIfAnswers: [1]              // array index of option b
+    }
+    //So Format of skipping is;
+     //   'question-11': {                     // this is question number as per the list in the code, it's ordinal (start at zero?).  "Skip the 11th question if"
+    //    skipIfQuestion: 10,                     // this is question 4-1                                                                 "THIS question number..."
+     //   skipIfAnswers: [3]              // array index of option d - note that D is the 4th option, index starts at zero                "was answered like this"
+   // }
+};
 
         let currentQuestion = 0;
         let scores = new Array(20).fill(0);
@@ -1045,22 +1063,47 @@
             return true;
         }
 
-        function previousQuestion() {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                showQuestion(currentQuestion);
-            }
+function previousQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        
+        // Skip questions in reverse if conditions are met
+        while (shouldSkipQuestion(currentQuestion) && currentQuestion > 0) {
+            currentQuestion--;
         }
+        
+        showQuestion(currentQuestion);
+    }
+}
 
-        function nextQuestion() {
-            if (validateCurrentQuestion()) {
-                if (currentQuestion < quizData.length - 1) {
-                    currentQuestion++;
-                    showQuestion(currentQuestion);
-                }
+function nextQuestion() {
+    if (validateCurrentQuestion()) {
+        if (currentQuestion < quizData.length - 1) {
+            currentQuestion++;
+            
+            // Skip questions if conditions are met
+            while (shouldSkipQuestion(currentQuestion) && currentQuestion < quizData.length - 1) {
+                currentQuestion++;
             }
+            
+            showQuestion(currentQuestion);
         }
+    }
+}
+                                                                        //Added here to do skipping
+function shouldSkipQuestion(questionIndex) {
+    const skipRule = skipConditions[`question-${questionIndex}`];
+    if (!skipRule) return false;
 
+    const previousAnswers = document.querySelectorAll(
+        `input[name="q${skipRule.skipIfQuestion}"]:checked`
+    );
+    
+    return Array.from(previousAnswers).some(answer => 
+        skipRule.skipIfAnswers.includes(parseInt(answer.value))
+    );
+}
+                                                                        //return to previous rules
         function calculateQuestionScores(questionIndex) {
             const question = quizData[questionIndex];
             let questionScores = new Array(20).fill(0);
