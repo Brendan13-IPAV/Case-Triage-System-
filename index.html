@@ -1000,18 +1000,49 @@ const skipConditions = {
     },
     
     'question-7': {
-        skipIfQuestion: 5,
-        skipIfAnswers: [7, 9]  // Combined conditions for question 7
+         conditions: [
+            {
+                question: 5,
+                answers: [7,9]
+            },
+            {
+                question: 6,
+                answers: [3]
+            }
+        ],
+        operator: 'OR'
+        //skipIfQuestion: 5,
+        //skipIfAnswers: [7, 9]  // Combined conditions for question 7
     },
     
     'question-8': {
-        skipIfQuestion: 7,
-        skipIfAnswers: [2]
+         conditions: [
+            {
+                question: 5,
+                answers: [7,9]
+            },
+            {
+                question: 7,
+                answers: [2]
+            }
+        ],
+        operator: 'OR'
+       // skipIfQuestion: 7,
+        // skipIfAnswers: [2]
     },
     
     'question-9': {
-        skipIfQuestion: 7,
-        skipIfAnswers: [2]
+         conditions: [
+            {
+                question: 5,
+                answers: [7,9]
+            },
+            {
+                question: 7,
+                answers: [2]
+            }
+        ],
+        operator: 'OR'
     },
     
     'question-27': {
