@@ -652,11 +652,11 @@
     },
     {
         // Question 5-2
-        question: "5-2) How important is the timeline for resolution?",
+        question: "5-2) How urgently is action required?",  //Changed wording
         options: [
-            "a) Urgent/time-critical",
-            "b) Expedited resolution preferred",
-            "c) Quality of resolution takes precedence"
+            "a) High (eg delay will cause irrevocible harm) ",
+            "b) Medium (non-binding actions at lower cost)",
+            "c) Low (more accessible options)"
         ],
         multiSelect: false,
         scoring: [
@@ -694,14 +694,14 @@
     },
     {
         // Question 5-4
-        question: "5-4) Would either party require confidentiality when resolving this issue (due to trade secrets, pending patents, etc)?",
+        question: "5-4) Would you require confidentiality when resolving this issue (due to trade secrets, pending patents, publicity reasons)?",  //Changed wording
         options: [
             "a) Yes",
             "b) No / Not Sure"
         ],
         multiSelect: false,
         scoring: [
-            [-1,-1,-1,1,1,1,0,0,1,0,1,0,1,-1,0,0,0,0,0,0],     // Option a
+            [-1,-1,-1,1,1,1,-1,-1,1,-1,1,-1,1,-1,-1,0,0,0,0,0],     // Option a
             [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0]      // Option b
         ],
         naMarkers: [
@@ -994,11 +994,47 @@
 
         // Add this object after your quizData array to define skip conditions
 const skipConditions = {
+    'question-2': {            //Simply to remove question totally.
+        skipIfQuestion: 0,
+        skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },
+        'question-3': {            //Simply to remove question totally.
+        skipIfQuestion: 0,
+        skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },
+        'question-11': {             //Simply to remove question totally.
+        skipIfQuestion: 0,
+        skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },
+            'question-14': {             //Simply to remove question totally.
+        skipIfQuestion: 0,
+        skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },
+            'question-11': {             //Simply to remove question totally.
+        skipIfQuestion: 0,
+        skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },
+            'question-22': {             //Simply to remove question totally.
+        skipIfQuestion: 0,
+        skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },
+            'question-28': {             //Simply to remove question totally.
+        skipIfQuestion: 0,
+        skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },
+            'question-29': {             //Simply to remove question totally.
+        skipIfQuestion: 0,
+        skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },
+         'question-30': {             //Simply to remove question totally.
+        skipIfQuestion: 0,
+        skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },    
     'question-6': {
         skipIfQuestion: 5,
         skipIfAnswers: [7, 9]  // Combined both conditions into one array
     },
-    
+
     'question-7': {
          conditions: [
             {
@@ -1011,8 +1047,6 @@ const skipConditions = {
             }
         ],
         operator: 'OR'
-        //skipIfQuestion: 5,
-        //skipIfAnswers: [7, 9]  // Combined conditions for question 7
     },
     
     'question-8': {
@@ -1046,11 +1080,6 @@ const skipConditions = {
     },
     
     'question-27': {
-        skipIfQuestion: 26,
-        skipIfAnswers: [1]
-    },
-    
-    'question-29': {
         skipIfQuestion: 26,
         skipIfAnswers: [1]
     },
