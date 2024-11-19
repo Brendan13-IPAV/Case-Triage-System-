@@ -673,7 +673,7 @@
     },
     {
         // Question 5-3
-        question: "5-3) How likely are both parties to agree to engage in negotiations?",
+        question: "5-3) How likely are you to agree to engage in negotiations?",  //Updated question
         options: [
             "a) Very likely",
             "b) Not sure",
@@ -730,7 +730,7 @@
     },
     {
         // Question 5-6
-        question: "5-6) What level of financial commitment are you prepared to make?",
+        question: "5-6) What level of financial commitment are you prepared to make to resolve this issue?",
         options: [
             "a) Willing to exceed the value of the right",
             "b) Willing to invest up to the value of the right",
@@ -751,7 +751,7 @@
     },
     {
         // Question 5-7
-        question: "5-7) What is the likelihood of reaching a financial settlement?",
+        question: "5-7) What is the likelihood of you agreeing to a financial settlement?",
         options: [
             "a) Very likely",
             "b) Not sure",
@@ -772,7 +772,7 @@
     },
     {
         // Question 5-8
-        question: "5-8) Are alternative commercial arrangements (e.g., licensing) possible?",
+        question: "5-8) Would you consider commercial arrangements to help resolve the issue? (e.g. licensing agreements, buying/selling registered IP)",
         options: [
             "a) Very likely",
             "b) Not sure",
@@ -974,7 +974,7 @@
     },
     {
         // Question 7-5
-        question: "7-5) How has the other party responded to communication?",
+        question: "7-5) Has the other party responded to your communication?",
         options: [
             "a) No response received",
             "b) Response received"
@@ -1064,6 +1064,10 @@ const skipConditions = {
             'question-11': {             //Simply to remove question totally.
         skipIfQuestion: 0,
         skipIfAnswers: [0,1,2,3,4,5,6,7,8]  // Combined both conditions into one array
+    },
+            'question-19': {
+        skipIfQuestion: 18,
+        skipIfAnswers: [2]
     },
             'question-22': {             //Simply to remove question totally.
         skipIfQuestion: 0,
